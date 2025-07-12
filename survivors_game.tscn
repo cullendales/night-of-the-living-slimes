@@ -1,0 +1,198 @@
+[gd_scene load_steps=8 format=3 uid="uid://b06w1msvtsqya"]
+
+[ext_resource type="PackedScene" uid="uid://cc6hlvtmjepdj" path="res://player.tscn" id="1_mqu3u"]
+[ext_resource type="Script" path="res://survivors_game.gd" id="1_r01is"]
+[ext_resource type="PackedScene" uid="uid://btjf25jmiq0au" path="res://pine_tree.tscn" id="2_ubpmg"]
+[ext_resource type="PackedScene" uid="uid://cghwip73ccis6" path="res://mob.tscn" id="2_vbag1"]
+
+[sub_resource type="Curve2D" id="Curve2D_e8q4a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -394, -465, 0, 0, 0, 0, 2258, -486, 0, 0, 0, 0, 2252, 1591, 0, 0, 0, 0, -385, 1670, 0, 0, 0, 0, -394, -465)
+}
+point_count = 5
+
+[sub_resource type="TileSet" id="TileSet_b5wes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pqs1"]
+size = Vector2(5221, 424.5)
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(13, 5)
+script = ExtResource("1_r01is")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -7
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -3.0
+offset_top = -316.0
+offset_right = 2078.0
+offset_bottom = 1477.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+layout_direction = 2
+offset_right = 171.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00"
+horizontal_alignment = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 2685.0
+offset_right = 4990.0
+offset_bottom = 2998.0
+text = ".00"
+horizontal_alignment = 2
+
+[node name="Player" parent="." instance=ExtResource("1_mqu3u")]
+position = Vector2(533, 281)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-533, -281)
+curve = SubResource("Curve2D_e8q4a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-394, -465)
+rotation = -0.00791839
+
+[node name="mob" parent="." instance=ExtResource("2_vbag1")]
+position = Vector2(14, 278)
+
+[node name="mob2" parent="." instance=ExtResource("2_vbag1")]
+position = Vector2(456, 414)
+
+[node name="mob3" parent="." instance=ExtResource("2_vbag1")]
+position = Vector2(668, -10)
+
+[node name="PineTree" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(11, 61)
+
+[node name="PineTree2" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(164, 249)
+
+[node name="PineTree3" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(311, 444)
+
+[node name="PineTree4" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(581, 134)
+
+[node name="PineTree5" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(874, 229)
+
+[node name="PineTree6" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(684, 427)
+
+[node name="PineTree7" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(966, 676)
+
+[node name="PineTree8" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(1237, 354)
+
+[node name="PineTree9" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(29, 798)
+
+[node name="PineTree10" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-193, 445)
+
+[node name="PineTree11" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-276, 132)
+
+[node name="PineTree12" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(1252, 67)
+
+[node name="PineTree13" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(1322, 730)
+
+[node name="PineTree14" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(347, 830)
+
+[node name="PineTree15" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(678, 725)
+
+[node name="PineTree16" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-245, 716)
+
+[node name="PineTree17" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(162, 1050)
+
+[node name="PineTree18" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(943, 979)
+
+[node name="PineTree19" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(594, 1203)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="gameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="gameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0.517647)
+
+[node name="Label" type="Label" parent="gameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -11.0
+offset_right = 84.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "GAMEOVER"
+
+[node name="PineTree20" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-603, 2654)
+
+[node name="PineTree21" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-467, 2664)
+
+[node name="PineTree22" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-341, 2674)
+
+[node name="PineTree23" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-215, 2669)
+
+[node name="PineTree24" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(-84, 2669)
+
+[node name="PineTree25" parent="." instance=ExtResource("2_ubpmg")]
+position = Vector2(37, 2684)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_b5wes")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(907.5, 2670.25)
+shape = SubResource("RectangleShape2D_6pqs1")
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
