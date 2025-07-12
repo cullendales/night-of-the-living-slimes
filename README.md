@@ -1,6 +1,6 @@
 # Night of the Living Slimes
 ## About
-A 2D game designed in Godot based off of GDQuests survivor's style [game](www.youtube.com/watch?v=GwCiGixlqiU).
+A 2D game designed in Godot based off of GDQuests survivor's style [game](https://www.youtube.com/watch?v=GwCiGixlqiU).
 
 
 
